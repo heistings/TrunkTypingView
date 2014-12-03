@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4210E6271A2F128A00D6455C /* TrunkTypingView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4210E6261A2F128A00D6455C /* TrunkTypingView.h */; };
+		4210E6291A2F128A00D6455C /* TrunkTypingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4210E6281A2F128A00D6455C /* TrunkTypingView.m */; };
+		4210E62F1A2F128A00D6455C /* libTrunkTypingView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4210E6231A2F128A00D6455C /* libTrunkTypingView.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4210E6301A2F128A00D6455C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4210E61B1A2F128A00D6455C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4210E6221A2F128A00D6455C;
+			remoteInfo = TrunkTypingView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4210E6211A2F128A00D6455C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				4210E6271A2F128A00D6455C /* TrunkTypingView.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4210E6231A2F128A00D6455C /* libTrunkTypingView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTrunkTypingView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4210E6261A2F128A00D6455C /* TrunkTypingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrunkTypingView.h; sourceTree = "<group>"; };
+		4210E6281A2F128A00D6455C /* TrunkTypingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrunkTypingView.m; sourceTree = "<group>"; };
+		4210E62E1A2F128A00D6455C /* TrunkTypingViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrunkTypingViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4210E6341A2F128A00D6455C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4210E6201A2F128A00D6455C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4210E62B1A2F128A00D6455C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4210E62F1A2F128A00D6455C /* libTrunkTypingView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4210E61A1A2F128A00D6455C = {
+			isa = PBXGroup;
+			children = (
+				4210E6251A2F128A00D6455C /* TrunkTypingView */,
+				4210E6321A2F128A00D6455C /* TrunkTypingViewTests */,
+				4210E6241A2F128A00D6455C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4210E6241A2F128A00D6455C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4210E6231A2F128A00D6455C /* libTrunkTypingView.a */,
+				4210E62E1A2F128A00D6455C /* TrunkTypingViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4210E6251A2F128A00D6455C /* TrunkTypingView */ = {
+			isa = PBXGroup;
+			children = (
+				4210E6261A2F128A00D6455C /* TrunkTypingView.h */,
+				4210E6281A2F128A00D6455C /* TrunkTypingView.m */,
+			);
+			path = TrunkTypingView;
+			sourceTree = "<group>";
+		};
+		4210E6321A2F128A00D6455C /* TrunkTypingViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				4210E6331A2F128A00D6455C /* Supporting Files */,
+			);
+			path = TrunkTypingViewTests;
+			sourceTree = "<group>";
+		};
+		4210E6331A2F128A00D6455C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4210E6341A2F128A00D6455C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4210E6221A2F128A00D6455C /* TrunkTypingView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4210E6371A2F128A00D6455C /* Build configuration list for PBXNativeTarget "TrunkTypingView" */;
+			buildPhases = (
+				4210E61F1A2F128A00D6455C /* Sources */,
+				4210E6201A2F128A00D6455C /* Frameworks */,
+				4210E6211A2F128A00D6455C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrunkTypingView;
+			productName = TrunkTypingView;
+			productReference = 4210E6231A2F128A00D6455C /* libTrunkTypingView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4210E62D1A2F128A00D6455C /* TrunkTypingViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4210E63A1A2F128A00D6455C /* Build configuration list for PBXNativeTarget "TrunkTypingViewTests" */;
+			buildPhases = (
+				4210E62A1A2F128A00D6455C /* Sources */,
+				4210E62B1A2F128A00D6455C /* Frameworks */,
+				4210E62C1A2F128A00D6455C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4210E6311A2F128A00D6455C /* PBXTargetDependency */,
+			);
+			name = TrunkTypingViewTests;
+			productName = TrunkTypingViewTests;
+			productReference = 4210E62E1A2F128A00D6455C /* TrunkTypingViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4210E61B1A2F128A00D6455C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "sohu-inc";
+				TargetAttributes = {
+					4210E6221A2F128A00D6455C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					4210E62D1A2F128A00D6455C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 4210E61E1A2F128A00D6455C /* Build configuration list for PBXProject "TrunkTypingView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4210E61A1A2F128A00D6455C;
+			productRefGroup = 4210E6241A2F128A00D6455C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4210E6221A2F128A00D6455C /* TrunkTypingView */,
+				4210E62D1A2F128A00D6455C /* TrunkTypingViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4210E62C1A2F128A00D6455C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4210E61F1A2F128A00D6455C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4210E6291A2F128A00D6455C /* TrunkTypingView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4210E62A1A2F128A00D6455C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4210E6311A2F128A00D6455C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4210E6221A2F128A00D6455C /* TrunkTypingView */;
+			targetProxy = 4210E6301A2F128A00D6455C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4210E6351A2F128A00D6455C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4210E6361A2F128A00D6455C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4210E6381A2F128A00D6455C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4210E6391A2F128A00D6455C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4210E63B1A2F128A00D6455C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrunkTypingViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4210E63C1A2F128A00D6455C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrunkTypingViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4210E61E1A2F128A00D6455C /* Build configuration list for PBXProject "TrunkTypingView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4210E6351A2F128A00D6455C /* Debug */,
+				4210E6361A2F128A00D6455C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4210E6371A2F128A00D6455C /* Build configuration list for PBXNativeTarget "TrunkTypingView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4210E6381A2F128A00D6455C /* Debug */,
+				4210E6391A2F128A00D6455C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4210E63A1A2F128A00D6455C /* Build configuration list for PBXNativeTarget "TrunkTypingViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4210E63B1A2F128A00D6455C /* Debug */,
+				4210E63C1A2F128A00D6455C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4210E61B1A2F128A00D6455C /* Project object */;
+}
