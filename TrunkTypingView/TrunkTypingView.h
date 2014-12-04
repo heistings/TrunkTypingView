@@ -39,6 +39,13 @@ typedef NS_ENUM(NSInteger, TrunkTypingViewFootType) {
 
 @property (nonatomic, strong, readonly) UITextView *textView;
 
+/**
+ * Adjusted for [UIFont systemFontOfSize:16], you should set a appropriate value if you changed trunkTypingView.textView.font.
+ */
+@property (nonatomic) UIFont *font;
+@property (nonatomic) CGFloat textViewBoudsOffset; // Default 4, adjusted for [UIFont systemFontOfSize:16]
+@property (nonatomic) CGFloat textViewDefaultHeight; // Default 36, adjusted for [UIFont systemFontOfSize:16]
+
 @end
 
 //______________________________________________________

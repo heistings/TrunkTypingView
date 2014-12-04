@@ -8,9 +8,6 @@
 
 #import "TrunkTypingView.h"
 
-#define TextViewBoudsOffset 4
-#define TextViewDefaultHeight 30
-
 @interface TrunkTypingView ()<UITextViewDelegate> {
     UITextView *textView;
 }
@@ -31,6 +28,19 @@
     
     _leftButtonVerticalAlignment = TrunkTypingViewContentVerticalAlignmentTop;// Default TrunkTypingViewContentVerticalAlignmentTop
     _rightButtonVerticalAlignment = TrunkTypingViewContentVerticalAlignmentTop;// Default TrunkTypingViewContentVerticalAlignmentTop
+    
+    _textViewBoudsOffset = 4;
+    _textViewDefaultHeight = 36;
+}
+
+- (void)initTextViewFrame
+{
+    textView.frame = CGRectMake(0, (self.frame.size.height - self.textViewDefaultHeight) / 2, self.frame.size.width, self.textViewDefaultHeight);
+    CGSize contentSize = textView.contentSize;
+    contentSize.height = self.textViewDefaultHeight;
+    textView.contentSize = contentSize;
+
+    [self autoresize];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -41,17 +51,15 @@
         
         self.backgroundColor = [UIColor blueColor];
         
-        textView = [[UITextView alloc] initWithFrame:CGRectMake(0, (frame.size.height - TextViewDefaultHeight) / 2, frame.size.width, TextViewDefaultHeight)];
-        CGSize contentSize = textView.contentSize;
-        contentSize.height = 30;
-        textView.contentSize = contentSize;
+        textView = [[UITextView alloc] initWithFrame:CGRectZero];
         textView.delegate = self;
+        textView.font = [UIFont systemFontOfSize:16];
         textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         textView.layer.borderWidth = 0.5;
         textView.layer.cornerRadius = 5.0;
         [self addSubview:textView];
         
-        [self autoresize];
+        [self initTextViewFrame];
     }
     return self;
 }
@@ -62,7 +70,7 @@
     CGFloat height = textView.contentSize.height; // new height
     
     CGRect frame = self.frame;
-    frame.size.height = height + TextViewBoudsOffset * 2;
+    frame.size.height = height + self.textViewBoudsOffset * 2;
     
     if (_leftButton) {
         frame.size.height = MAX(frame.size.height, _leftButton.frame.size.height);
@@ -185,6 +193,25 @@
 - (UITextView *)textView
 {
     return textView;
+}
+
+- (void)setFont:(UIFont *)font
+{
+    textView.font = font;
+    
+    [self autoresize];
+}
+
+- (void)setTextViewDefaultHeight:(CGFloat)textViewDefaultHeight
+{
+    _textViewDefaultHeight = textViewDefaultHeight;
+    
+    [self initTextViewFrame];
+}
+
+- (UIFont *)font
+{
+    return textView.font;
 }
 
 #pragma mark - UITextViewDelegate
