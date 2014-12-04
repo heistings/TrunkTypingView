@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, TrunkTypingViewFootType) {
 
 @property (nonatomic, weak) id<TrunkTypingViewDelegate> delegate;
 
-@property (nonatomic) TrunkTypingViewFootType footType; // Default TrunkTypingViewFootTypeLeftDown
+@property (nonatomic) TrunkTypingViewFootType footType; // Default TrunkTypingViewFootTypeLeftUp
 @property (nonatomic) CGPoint foot; // Default CGPointZero
 
 @property (nonatomic) TrunkTypingViewContentVerticalAlignment leftButtonVerticalAlignment; // Default TrunkTypingViewContentVerticalAlignmentTop
