@@ -56,15 +56,6 @@
     return self;
 }
 
-#pragma mark - OverWrite
-- (BOOL)resignFirstResponder
-{
-    BOOL a = [textView resignFirstResponder];
-    BOOL b = [super resignFirstResponder];
-    
-    return (a && b);
-}
-
 #pragma mark - Private
 - (void)autoresizeSelf
 {
@@ -189,6 +180,11 @@
     [self addSubview:_rightButton];
     
     [self autoresize];
+}
+
+- (UITextView *)textView
+{
+    return textView;
 }
 
 #pragma mark - UITextViewDelegate

@@ -37,6 +37,8 @@ typedef NS_ENUM(NSInteger, TrunkTypingViewFootType) {
 @property (nonatomic, strong) UIButton *leftButton;
 @property (nonatomic, strong) UIButton *rightButton;
 
+@property (nonatomic, strong, readonly) UITextView *textView;
+
 @end
 
 //______________________________________________________
