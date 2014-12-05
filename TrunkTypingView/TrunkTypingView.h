@@ -44,7 +44,8 @@ typedef NS_ENUM(NSInteger, TrunkTypingViewFootType) {
  */
 @property (nonatomic) UIFont *font;
 @property (nonatomic) CGFloat textViewBoudsOffset; // Default 4, adjusted for [UIFont systemFontOfSize:16]
-@property (nonatomic) CGFloat textViewDefaultHeight; // Default 36, adjusted for [UIFont systemFontOfSize:16]
+
+@property (nonatomic) int maxNumberOfLines; // Default 1, if reached, typing view will no longer grow up.
 
 @end
 

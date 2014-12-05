@@ -10,6 +10,8 @@
 
 @interface TrunkTypingView ()<UITextViewDelegate> {
     UITextView *textView;
+    
+    CGFloat maxHeight;
 }
 
 @end
@@ -30,14 +32,32 @@
     _rightButtonVerticalAlignment = TrunkTypingViewContentVerticalAlignmentTop;// Default TrunkTypingViewContentVerticalAlignmentTop
     
     _textViewBoudsOffset = 4;
-    _textViewDefaultHeight = 36;
+    _maxNumberOfLines = 1;
 }
 
 - (void)initTextViewFrame
 {
-    textView.frame = CGRectMake(0, (self.frame.size.height - self.textViewDefaultHeight) / 2, self.frame.size.width, self.textViewDefaultHeight);
+    // Use internalTextView for height calculations, thanks to Gwynne <http://blog.darkrainfall.org/>
+    NSString *saveText = textView.text, *newText = [textView.text isEqualToString:@""] ? textView.text :  @"-";
+    
+    textView.delegate = nil;
+    textView.hidden = YES;
+    
+    
+    textView.text = newText;
+    
+    maxHeight = [self measureHeight];
+    
+    textView.text = saveText;
+    textView.hidden = NO;
+    textView.delegate = self;
+    
+    [self sizeToFit];
+    
+    textView.frame = CGRectMake(0, (self.frame.size.height - maxHeight) / 2, self.frame.size.width, maxHeight);
+    
     CGSize contentSize = textView.contentSize;
-    contentSize.height = self.textViewDefaultHeight;
+    contentSize.height = maxHeight;
     textView.contentSize = contentSize;
 
     [self autoresize];
@@ -58,17 +78,22 @@
         textView.layer.borderWidth = 0.5;
         textView.layer.cornerRadius = 5.0;
         [self addSubview:textView];
-        
+                
         [self initTextViewFrame];
     }
     return self;
 }
 
 #pragma mark - Private
+- (CGFloat)textViewHeightThatFits
+{
+    return MIN(textView.contentSize.height, maxHeight);
+}
+
 - (void)autoresizeSelf
 {
-    CGFloat height = textView.contentSize.height; // new height
-    
+    CGFloat height = [self textViewHeightThatFits]; // new height
+        
     CGRect frame = self.frame;
     frame.size.height = height + self.textViewBoudsOffset * 2;
     
@@ -147,7 +172,7 @@
 
 - (void)autoresizeTextView
 {
-    CGFloat height = textView.contentSize.height; // new height
+    CGFloat height = [self textViewHeightThatFits]; // new height
     textView.frame = CGRectMake(_leftButton?_leftButton.frame.size.width:0, (self.frame.size.height - height) / 2, self.frame.size.width - (_leftButton?_leftButton.frame.size.width:0) - (_rightButton ? _rightButton.frame.size.width:0), height);
 }
 
@@ -157,6 +182,18 @@
     [self autoresizeLeftButton];
     [self autoresizeRightButton];
     [self autoresizeTextView];
+}
+
+// Code from apple developer forum - @Steve Krulewitz, @Mark Marszal, @Eric Silverberg
+- (CGFloat)measureHeight
+{
+    if ([self respondsToSelector:@selector(snapshotViewAfterScreenUpdates:)])
+    {
+        return ceilf([textView sizeThatFits:textView.frame.size].height);
+    }
+    else {
+        return textView.contentSize.height;
+    }
 }
 
 #pragma mark - Property
@@ -199,19 +236,49 @@
 {
     textView.font = font;
     
-    [self autoresize];
-}
-
-- (void)setTextViewDefaultHeight:(CGFloat)textViewDefaultHeight
-{
-    _textViewDefaultHeight = textViewDefaultHeight;
-    
     [self initTextViewFrame];
 }
 
 - (UIFont *)font
 {
     return textView.font;
+}
+
+-(void)setMaxNumberOfLines:(int)n
+{
+    // Use internalTextView for height calculations, thanks to Gwynne <http://blog.darkrainfall.org/>
+    NSString *saveText = textView.text, *newText = @"-";
+    
+    textView.delegate = nil;
+    textView.hidden = YES;
+    
+    for (int i = 1; i < n; ++i)
+        newText = [newText stringByAppendingString:@"\n|W|"];
+    
+    textView.text = newText;
+    
+    maxHeight = [self measureHeight];
+    
+    textView.text = saveText;
+    textView.hidden = NO;
+    textView.delegate = self;
+    
+    [self sizeToFit];
+    
+    _maxNumberOfLines = n;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    if ([self.delegate respondsToSelector:@selector(trunkTypingView:frameWillChange:)]) {
+        [self.delegate trunkTypingView:self frameWillChange:frame];
+    }
+    
+    [super setFrame:frame];
+    
+    if ([self.delegate respondsToSelector:@selector(trunkTypingView:frameDidChange:)]) {
+        [self.delegate trunkTypingView:self frameDidChange:frame];
+    }
 }
 
 #pragma mark - UITextViewDelegate
