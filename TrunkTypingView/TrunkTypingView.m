@@ -215,6 +215,38 @@
 }
 
 #pragma mark - UITextViewDelegate
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    if ([self.delegate respondsToSelector:@selector(trunkTypingViewShouldBeginEditing:)]) {
+        return [self.delegate trunkTypingViewShouldBeginEditing:self];
+    }
+    
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    if ([self.delegate respondsToSelector:@selector(trunkTypingViewShouldEndEditing:)]) {
+        [self.delegate trunkTypingViewShouldEndEditing:self];
+    }
+    
+    return YES;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([self.delegate respondsToSelector:@selector(trunkTypingViewDidBeginEditing:)]) {
+        [self.delegate trunkTypingViewDidBeginEditing:self];
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([self.delegate respondsToSelector:@selector(trunkTypingViewDidEndEditing:)]) {
+        [self.delegate trunkTypingViewDidEndEditing:self];
+    }
+}
+
 - (void)textViewDidChange:(UITextView *)textView
 {
     [self autoresize];

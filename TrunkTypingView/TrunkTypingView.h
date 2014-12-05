@@ -53,6 +53,12 @@ typedef NS_ENUM(NSInteger, TrunkTypingViewFootType) {
 
 @protocol TrunkTypingViewDelegate <NSObject>
 
+@optional
+- (BOOL)trunkTypingViewShouldBeginEditing:(TrunkTypingView *)view;
+- (BOOL)trunkTypingViewShouldEndEditing:(TrunkTypingView *)view;
+- (void)trunkTypingViewDidBeginEditing:(TrunkTypingView *)view;
+- (void)trunkTypingViewDidEndEditing:(TrunkTypingView *)view;
+
 - (void)trunkTypingView:(TrunkTypingView *)view frameWillChange:(CGRect)frame;
 - (void)trunkTypingView:(TrunkTypingView *)view frameDidChange:(CGRect)frame;
 
